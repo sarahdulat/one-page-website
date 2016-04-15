@@ -2,7 +2,7 @@
 	box-sizing: border-box;	
 }
 
-body {
+html, body {
 	margin: 0;
 	font-family: 'Helvetica';
 }
@@ -10,7 +10,7 @@ body {
 section {
 	height: 600px;
 	border: 1px solid black;
-	padding-top: 38px;
+	padding: 38px 0 0 10px;
 }
 
 section:nth-child(odd) {
@@ -22,33 +22,56 @@ section:nth-child(odd) {
 	background-color: #F2F2F2;
 	position: fixed;
 	width: 100%;
-}
-
-nav {
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
 }
 
-nav ul {
+#menu-icon {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 32px;
+	cursor: pointer;
+	color: #F16544;
+	display: none;
+}
+
+.nav-wrapper ul {
 	padding: 0;
 	margin: 0;
 }
 
-nav li {
+.nav-wrapper li {
 	display: inline-block;
 	padding: 10px;
 }
 
-nav li.current {
+.nav-wrapper li.current {
 	background-color: #F16544;
 }
 
-nav li.current a {
+.nav-wrapper li.current a {
 	color: #FFFFFF;
 }
 
-nav li a {
+.nav-wrapper li a {
 	color: #F16544;
 	text-decoration: none;
+}
+
+/*MEDIA*/
+
+@media all and (max-width: 768px) {
+	.nav-wrapper nav {
+		display: none;
+	}
+
+	.nav-wrapper li {
+		display: block;
+	}
+
+	#menu-icon {
+		display: block;
+	}
 }

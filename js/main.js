@@ -1,22 +1,22 @@
-$('document').ready(function(){ 
+$(document).ready(function(){ 
 
     // JQEURY.NAV.JS
 
     $('nav').onePageNav({
-        currentClass: 'current',
-        changeHash: false,
-        scrollSpeed: 750,
-        scrollThreshold: 0.5,
-        filter: '',
-        easing: 'swing',
-        begin: function() {
-            //I get fired when the animation is starting
-        },
-        end: function() {
-            //I get fired when the animation is ending
-        },
-        scrollChange: function($currentListItem) {
-            //I get fired when you enter a section and I pass the list item of the section
+    });
+
+    // MOBILE NAV ANIMATION
+
+    var menu = $('.nav-wrapper nav');
+
+    $('#menu-icon').click(function () {
+        menu.slideToggle();
+    });
+
+    $(window).resize(function () {
+        var w = $(window).width();
+        if(w > 768 && menu.is(':hidden')) {
+            menu.removeAttr('style');
         }
     });
 
